@@ -108,14 +108,33 @@ border-radius: 10px; */
   background-color: #d1d1d1;
   border-radius: 8px;
 }
-.btnlogin{
+.btnlogin {
   cursor: pointer;
   border-radius: 8px;
   border: 1px solid black;
 }
 
-.filter{
+.filter {
   display: flex;
-
-
+}
+.linkcolor {
+  color: black;
+  text-decoration: none; /* remove underline */
+}
+.linkcolor:hover {
+  color: #555;
+}
+.classcomp {
+  padding: 10px;
+  border: 1px solid black;
+}
+body.dark {
+  background-color: black;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+body.light {
+  background-color: white;
+  color: black;
+  transition: all 0.3s ease-in-out;
 }

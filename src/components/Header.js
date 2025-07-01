@@ -1,8 +1,14 @@
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import useStatus  from "../utils/useStatus";
 const Header = () => {
   // let btnName = "Login";
   const [btnName, setbtnName] = useState("Login");
+  // console.log("Header Render");
+const  onlineStatus = useStatus();
+  useEffect(() => {
+    // console.log("useeffect called")
+  }, []);
   return (
     <div className="header">
       <div className="logo-container">
@@ -13,11 +19,19 @@ const Header = () => {
       </div>
       <div className="nav-items ">
         <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us </li>
+          <li >
+            online Status :{onlineStatus ? "✅" : "🔴"}
+          </li>
+          <li>
+            <Link  className="linkcolor" to="/">Home</Link>
+          </li>
+          <li>
+            <Link  className="linkcolor" to="/about">About us </Link>
+          </li>
+          <li>
+            <Link  className="linkcolor" to="/contact">Contact-Us</Link>
+          </li>
           <li>Cart </li>
-          
           <button
             className="btnlogin"
             onClick={() => {
@@ -26,6 +40,7 @@ const Header = () => {
           >
             {btnName}
           </button>
+         
         </ul>
       </div>
     </div>
